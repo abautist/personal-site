@@ -8,19 +8,13 @@ const StyledHeader = styled(Flex)`
 `
 
 const Home = () => (
-  <>
-    <Head>
-      <title>Test</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-    <main>
-      <Flex flexDirection='column'>
-        <StyledHeader p={2} justifyContent='center'>
-          <Text fontSize={3} color='text.lightest'>Test</Text>
-        </StyledHeader>
-      </Flex>
-    </main>
-  </>
+  <main>
+    <Flex flexDirection='column'>
+      <StyledHeader p={2} justifyContent='center'>
+        <Text fontSize={3} color='text.lightest'>Test</Text>
+      </StyledHeader>
+    </Flex>
+  </main>
 )
 
 export default Home

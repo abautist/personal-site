@@ -1,7 +1,10 @@
-function Layout(props) {
+import Meta from './Meta'
+
+function Layout({ children }) {
   return (
-    <div className="page-layout">
-      {props.children}
+    <>
+      <Meta />
+      {children}
       <style jsx global>{`
         body {
           margin: 0;
@@ -9,7 +12,7 @@ function Layout(props) {
           background-image: url(/public/ignasi_pattern_s.png);
         }
       `}</style>
-    </div>
+    </>
   )
 }
 
