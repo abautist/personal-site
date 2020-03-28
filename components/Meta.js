@@ -1,9 +1,5 @@
-import React, { useContext } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
 import Head from 'next/head'
-import get from 'lodash/get'
-import BootstrapDataContext from '../context/BootstrapDataContext'
-import DEFAULT_META_TAGS from '../constants/meta'
 
 const Meta = () => {
   // TODO: UPDATE
@@ -28,7 +24,6 @@ const Meta = () => {
         <meta name="twitter:card" content="summary" />
         <meta
           name="description"
-          className="metaDescription"
           content={metaDescription}
         />
         <link rel="canonical" href={metaUrl} />
