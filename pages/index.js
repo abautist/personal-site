@@ -4,13 +4,13 @@ import styled from 'styled-components'
 
 const StyledHeader = styled(Flex)`
   background-color: ${getPaletteColor('promoSecondary.light')};
-  box-shadow: 5px 5px ${getPaletteColor('text.light')};
+  box-shadow: 7px 7px ${getPaletteColor('text.light')};
 `
 
 const Home = () => (
   <main>
     <Flex flexDirection='column'>
-      <StyledHeader p={2} justifyContent='center'>
+      <StyledHeader p={2} m={3} justifyContent='center'>
         <Text fontSize={3} color='text.lightest'>Test</Text>
       </StyledHeader>
     </Flex>

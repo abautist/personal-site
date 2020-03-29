@@ -30,9 +30,9 @@ const Meta = () => {
         <link
           rel="preconnect"
           href="https://fonts.googleapis.com"
-          crossOrigin
+          crossOrigin="true"
         />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Montserrat:500,700"
