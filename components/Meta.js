@@ -7,6 +7,7 @@ const Meta = () => {
   const metaUrl = '/test'
   const metaImage = '/test-image'
   const metaDescription = 'personal site'
+  const favIconUrl = '/favicon.ico'
   return (
     <>
       <Head>
@@ -26,6 +27,7 @@ const Meta = () => {
           name="description"
           content={metaDescription}
         />
+        <link href={favIconUrl} rel='shortcut icon' type='image/x-icon'/>
         <link rel="canonical" href={metaUrl} />
         <link
           rel="preconnect"
