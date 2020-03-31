@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Typical from 'react-typical'
 import { Box, Button, Flex, Text, Image, Link, getPaletteColor } from 'pcln-design-system'
 import About from '../components/About'
+import WorkExperience from '../components/WorkExperience'
 
 const StyledHeader = styled(Flex)`
   background-color: ${getPaletteColor('text.lightest')};
@@ -56,14 +57,28 @@ const footerLinkContent = [
 
 const Home = () => {
   const [isAboutPageDisplayed, setAboutPageDisplayed] = useState(false)
+  const [isWorkExperienceDisplayed, setWorkExperienceDisplayed] = useState(false)
   const navigationContent = [
     {
+      displayText: 'Home',
+      onClick: () => {
+        setAboutPageDisplayed(false)
+        setWorkExperienceDisplayed(false)
+      }
+    },
+    {
       displayText: 'About',
-      onClick: () => setAboutPageDisplayed(true)
+      onClick: () => {
+        setWorkExperienceDisplayed(false)
+        setAboutPageDisplayed(true)
+      }  
     },
     {
       displayText: 'Work Experience',
-      onClick: () => alert('work experience')
+      onClick: () => {
+        setAboutPageDisplayed(false)
+        setWorkExperienceDisplayed(true)
+      }
     }
   ]
   
@@ -83,24 +98,22 @@ const Home = () => {
             <Text fontWeight='bold' fontSize={3}>Agustin Bautista</Text>
             <Text>Full Stack Developer</Text>
           </Flex>
-          {!isAboutPageDisplayed && (
-            <>
-              <Flex mt={3} px={3} justifyContent='center' style={{ height: '90px', textAlign: 'center' }}>
-                <Typical
-                  steps={[
-                    'The Internet and developer tools are more accessible than ever before.',
-                    500, 
-                    'The Internet and developer tools are more accessible than ever before. It\'s truly an exciting time to be working in the tech industry.'
-                  ]}
-                  wrapper='div'
-                />
-              </Flex>
-              {displayNavigationButtons(navigationContent)}
-            </>
-          )}
-          
-          {isAboutPageDisplayed && (
+          {displayNavigationButtons(navigationContent, isAboutPageDisplayed, isWorkExperienceDisplayed)}
+          {isAboutPageDisplayed && !isWorkExperienceDisplayed ? (
             <About />
+          ) : isWorkExperienceDisplayed && !isAboutPageDisplayed ? (
+            <WorkExperience />
+          ) : (
+            <Flex mt={4} px={3} justifyContent='center' style={{ height: '90px', textAlign: 'center' }}>
+              <Typical
+                steps={[
+                  'The Internet and developer tools are more accessible than ever before.',
+                  500, 
+                  'The Internet and developer tools are more accessible than ever before. It\'s truly an exciting time to be working in the tech industry 😊'
+                ]}
+                wrapper='div'
+              />
+            </Flex>
           )}
         </Flex>
       </main>
@@ -113,7 +126,13 @@ const Home = () => {
   )
 }
 
-function displayNavigationButtons(array) {
+function displayNavigationButtons(array, isAboutPageDisplayed, isWorkExperienceDisplayed) {
+  isAboutPageDisplayed
+    ? array.splice(1, 1) 
+    : isWorkExperienceDisplayed
+      ? array.pop()
+      : array.shift()
+
   return array.map(button => (
     <StyledNavigationButton p={2} mt={3} onClick={button.onClick} justifyContent='center' key={button.displayText}>
       <Text fontSize={3} color='text.lightest'>{button.displayText}</Text>

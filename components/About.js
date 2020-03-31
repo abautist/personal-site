@@ -9,19 +9,49 @@ const About = () => {
     const myRadarChart = new Chart(ctx, {
       type: 'radar',
       data: {
-        labels: ['Running', 'Swimming', 'Eating', 'Cycling', 'test2', 'test3', 'test4'],
-        datasets: [{
-            data: [20, 10, 4, 2, 1, 1, 5]
-        }]
-    },
-      // options: options
+        datasets: [
+          {
+            label: 'My life in 2015',
+            data: [6, 6, 3, 1, 1, 6, 7, 7, 5],
+            backgroundColor: 'rgba(254, 62, 129, .5)',
+            borderColor: 'rgba(254, 62, 129, 1)'
+          },
+          {
+            label: 'My life in 2020',
+            data: [9, 8, 9, 8, 7, 3, 3, 2, 7],
+            backgroundColor: 'rgba(0, 122, 255, .5)',
+            borderColor: 'rgba(0, 122, 255, 1)'
+          }
+        ],
+        labels: ['ES6+', 'HTML', 'React16+', 'CSS-in-JS', 'graphQL', 'Ruby on Rails', 'SASS', 'Angular', 'Node']
+      },
+      options: {
+        legend: {
+          labels: {
+              fontColor: getPaletteColor('text.dark'),
+              defaultFontStyle: 'bold',
+              fontSize: 14
+          }
+        },
+        scale: {
+          pointLabels: {
+            fontSize: 12,
+            fontColor: getPaletteColor('text.dark')
+          },
+          ticks: {
+            display: false,
+            beginAtZero: true,
+            min: 0,
+            max: 20,
+            stepSize: 2
+          }
+        }
+      }
     })
   })
   
-
   return (
-    <Flex p={3} flexDirection='column'>
-      <Text>This is the about page WIP</Text>
+    <Flex px={3} mt={4} flexDirection='column'>
       <canvas id="myRadarChart" width="400" height="400"></canvas>
     </Flex>
   )

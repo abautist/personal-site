@@ -3,10 +3,10 @@ import Head from 'next/head'
 
 const Meta = () => {
   // TODO: UPDATE
-  const metaTitle = 'Test'
+  const metaTitle = 'Agustin Bautista - Full Stack Developer'
   const metaUrl = '/test'
   const metaImage = '/test-image'
-  const metaDescription = 'personal site'
+  const metaDescription = 'Agustin Bautista\'s personal site'
   const favIconUrl = '/favicon.ico'
   return (
     <>
