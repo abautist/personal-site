@@ -2,10 +2,7 @@ module.exports = {
   collectCoverage: true,
   testPathIgnorePatterns: ['/node_modules/', '<rootDir>/dist/'],
   coveragePathIgnorePatterns: ['/node_modules/', '<rootDir>/dist/'],
-  collectCoverageFrom: [
-    '<rootDir>/**/*.js',
-    '!/**/*.{stories,story}.js'
-  ],
+  collectCoverageFrom: ['<rootDir>/**/*.js', '!/**/*.{stories,story}.js'],
   coverageThreshold: {
     global: {
       branches: 0,

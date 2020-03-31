@@ -1,7 +1,15 @@
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Chart from 'chart.js'
-import { Box, Button, Flex, Text, Image, Link, getPaletteColor } from 'pcln-design-system'
+import {
+  Box,
+  Button,
+  Flex,
+  Text,
+  Image,
+  Link,
+  getPaletteColor
+} from 'pcln-design-system'
 
 const About = () => {
   useEffect(() => {
@@ -23,14 +31,24 @@ const About = () => {
             borderColor: 'rgba(0, 122, 255, 1)'
           }
         ],
-        labels: ['ES6+', 'HTML', 'React16+', 'CSS-in-JS', 'graphQL', 'Ruby on Rails', 'SASS', 'Angular', 'Node']
+        labels: [
+          'ES6+',
+          'HTML',
+          'React16+',
+          'CSS-in-JS',
+          'graphQL',
+          'Ruby on Rails',
+          'SASS',
+          'Angular',
+          'Node'
+        ]
       },
       options: {
         legend: {
           labels: {
-              fontColor: getPaletteColor('text.dark'),
-              defaultFontStyle: 'bold',
-              fontSize: 14
+            fontColor: getPaletteColor('text.dark'),
+            defaultFontStyle: 'bold',
+            fontSize: 14
           }
         },
         scale: {
@@ -49,10 +67,10 @@ const About = () => {
       }
     })
   })
-  
+
   return (
-    <Flex px={3} mt={4} flexDirection='column'>
-      <canvas id="myRadarChart" width="400" height="400"></canvas>
+    <Flex px={3} mt={4} flexDirection="column">
+      <canvas id="myRadarChart" width="400" height="400" />
     </Flex>
   )
 }

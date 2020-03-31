@@ -6,7 +6,7 @@ const Meta = () => {
   const metaTitle = 'Agustin Bautista - Full Stack Developer'
   const metaUrl = '/test'
   const metaImage = '/test-image'
-  const metaDescription = 'Agustin Bautista\'s personal site'
+  const metaDescription = "Agustin Bautista's personal site"
   const favIconUrl = '/favicon.ico'
   return (
     <>
@@ -23,18 +23,19 @@ const Meta = () => {
         <meta name="twitter:image" content={metaImage} />
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:card" content="summary" />
-        <meta
-          name="description"
-          content={metaDescription}
-        />
-        <link href={favIconUrl} rel='shortcut icon' type='image/x-icon'/>
+        <meta name="description" content={metaDescription} />
+        <link href={favIconUrl} rel="shortcut icon" type="image/x-icon" />
         <link rel="canonical" href={metaUrl} />
         <link
           rel="preconnect"
           href="https://fonts.googleapis.com"
           crossOrigin="true"
         />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Montserrat:500,700"
