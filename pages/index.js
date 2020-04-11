@@ -31,7 +31,14 @@ const StyledProfileImage = styled(Image)`
 `
 
 const StyledNavigationButton = styled(Button)`
-  background-color: ${getPaletteColor('promoSecondary.light')};
+  background-color: ${({
+    isAboutPageDisplayed,
+    isWorkExperienceDisplayed,
+    isHomeDisplayed
+  }) =>
+    isAboutPageDisplayed || isWorkExperienceDisplayed || isHomeDisplayed
+      ? getPaletteColor('promoSecondary.dark')
+      : getPaletteColor('promoSecondary.light')};
   box-shadow: 7px 7px ${getPaletteColor('text.light')};
 `
 
@@ -71,21 +78,21 @@ const Home = () => {
   const navigationContent = [
     {
       displayText: 'Home',
-      onClick: () => {
+      handleClick: () => {
         setAboutPageDisplayed(false)
         setWorkExperienceDisplayed(false)
       }
     },
     {
       displayText: 'About',
-      onClick: () => {
+      handleClick: () => {
         setWorkExperienceDisplayed(false)
         setAboutPageDisplayed(true)
       }
     },
     {
       displayText: 'Work Experience',
-      onClick: () => {
+      handleClick: () => {
         setAboutPageDisplayed(false)
         setWorkExperienceDisplayed(true)
       }
@@ -154,19 +161,18 @@ function displayNavigationButtons(
   isAboutPageDisplayed,
   isWorkExperienceDisplayed
 ) {
-  isAboutPageDisplayed
-    ? array.splice(1, 1)
-    : isWorkExperienceDisplayed
-    ? array.pop()
-    : array.shift()
-
-  return array.map((button) => (
+  return array.map((button, index) => (
     <StyledNavigationButton
       p={2}
       mt={3}
-      onClick={button.onClick}
+      onClick={button.handleClick}
       justifyContent="center"
       key={button.displayText}
+      isHomeDisplayed={
+        !isAboutPageDisplayed && !isWorkExperienceDisplayed && index === 0
+      }
+      isAboutPageDisplayed={isAboutPageDisplayed && index === 1}
+      isWorkExperienceDisplayed={isWorkExperienceDisplayed && index === 2}
     >
       <Text fontSize={3} color="text.lightest">
         {button.displayText}
