@@ -26,20 +26,6 @@ const Meta = () => {
         <meta name="description" content={metaDescription} />
         <link href={favIconUrl} rel="shortcut icon" type="image/x-icon" />
         <link rel="canonical" href={metaUrl} />
-        <link
-          rel="preconnect"
-          href="https://fonts.googleapis.com"
-          crossOrigin="true"
-        />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Montserrat:500,700"
-        />
         <title>{metaTitle}</title>
       </Head>
     </>
