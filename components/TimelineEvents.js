@@ -1,6 +1,6 @@
 import { Timeline, TimelineEvent } from 'react-event-timeline'
 import styled from 'styled-components'
-import { Flex, Image, Text, getPaletteColor } from 'pcln-design-system'
+import { Box, Flex, Image, Text, getPaletteColor } from 'pcln-design-system'
 import constants from '../constants'
 const { workEvents } = constants
 
@@ -23,6 +23,7 @@ const customizedBubbleStyle = {
   width: '36px',
   height: '36px',
   boxShadow: '0 3px 6px 0 rgba(0, 0, 0, 0.5)',
+  paddingRight: '2px',
   marginLeft: '-2px',
   overflow: 'hidden'
 }
@@ -54,7 +55,7 @@ const TimelineEvents = () => (
           contentStyle={contentStyle}
           icon={icon}
           collapsible={collapsible}
-          key={event.title}
+          key={title}
         >
           <Flex flexDirection="column" alignItems="center">
             <Flex mb={2}>
@@ -80,7 +81,11 @@ const TimelineEvents = () => (
                 <FlexWrapped my={2}>{secondContent}</FlexWrapped>
               </Flex>
             ) : null}
-            {secondImageUrl ? <ImageWithShadow src={secondImageUrl} /> : null}
+            {secondImageUrl ? (
+              <Box mt={2}>
+                <ImageWithShadow src={secondImageUrl} />
+              </Box>
+            ) : null}
           </Flex>
         </TimelineEvent>
       )

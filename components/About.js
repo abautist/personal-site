@@ -1,15 +1,6 @@
-import { useState, useEffect } from 'react'
-import styled from 'styled-components'
+import { useEffect } from 'react'
 import Chart from 'chart.js'
-import {
-  Box,
-  Button,
-  Flex,
-  Text,
-  Image,
-  Link,
-  getPaletteColor
-} from 'pcln-design-system'
+import { Container, Flex, getPaletteColor } from 'pcln-design-system'
 
 const About = () => {
   useEffect(() => {
@@ -69,9 +60,11 @@ const About = () => {
   })
 
   return (
-    <Flex px={3} mt={4} flexDirection="column">
-      <canvas id="myRadarChart" width="400" height="400" />
-    </Flex>
+    <Container maxWidth={600}>
+      <Flex px={3} my={4} flexDirection="column">
+        <canvas id="myRadarChart" width="320" height="320" />
+      </Flex>
+    </Container>
   )
 }
 

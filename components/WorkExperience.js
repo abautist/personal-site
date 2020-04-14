@@ -12,7 +12,7 @@ const FlexWrapped = styled(Flex)`
 const WorkExperience = () => (
   <Flex flexDirection="column" mt={4}>
     <FlexWrapped width={1} justifyContent="center">
-      {displayWorkLogos(professionalExperience, '60px')}
+      {displayWorkLogos(professionalExperience)}
     </FlexWrapped>
     <TimelineEvents />
   </Flex>

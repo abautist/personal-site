@@ -125,7 +125,7 @@ const professionalExperience = [
 const workEvents = [
   {
     title: 'Post Booking, Packages',
-    createdAt: 'Restack of customer itinerary page',
+    createdAt: 'Restack of customer itinerary page (current)',
     icon: <PricelineSvg width="31px" />,
     firstContentTitle: 'Old',
     firstContent: displayTechStamps(oldPostBookingTech),
@@ -136,21 +136,28 @@ const workEvents = [
   },
   {
     title: 'Mono Repo Initiative',
-    createdAt: 'Universal cross sell component',
+    createdAt: 'Universal cross sell component (2020)',
     icon: <PricelineSvg width="31px" />,
     firstContent: displayTechStamps(monoRepoTech),
     firstImageUrl: './cross-sell.png'
   },
   {
     title: 'White Label Initiative',
-    createdAt: 'Configurable booking platform for partners',
+    createdAt: 'Configurable booking platform for partners (2019)',
     icon: <PricelineSvg width="31px" />,
     firstContent: displayTechStamps(whiteLabelTech),
     firstImageUrl: './united.png'
   },
   {
     title: 'Site Experience (Site-X)',
-    createdAt: 'Homepage redesign, performance optimizations',
+    createdAt: 'Google one tap sign in (2018)',
+    icon: <PricelineSvg width="31px" />,
+    firstContent: displayTechStamps(oneTapTech),
+    firstImageUrl: './google-one-tap.png'
+  },
+  {
+    title: 'Site Experience (Site-X)',
+    createdAt: 'Homepage redesign, performance optimizations (2017)',
     icon: <PricelineSvg width="31px" />,
     firstContentTitle: 'Old',
     firstContent: displayTechStamps(oldHomepage),
@@ -160,49 +167,42 @@ const workEvents = [
     secondImageUrl: './new-hp.png'
   },
   {
-    title: 'Site Experience (Site-X)',
-    createdAt: 'Google one tap sign in',
-    icon: <PricelineSvg width="31px" />,
-    firstContent: displayTechStamps(oneTapTech),
-    firstImageUrl: './google-one-tap.png'
-  },
-  {
     title: 'General Assembly',
-    createdAt: 'Web development teaching assistant',
+    createdAt: 'Web development teaching assistant (2016)',
     icon: <GaSvg width="37px" />,
     firstContent: displayTechStamps(teachingAssistant)
   },
   {
     title: 'General Assembly - Web dev immersive',
-    createdAt: 'Final project - retrieval app',
+    createdAt: 'Final project - retrieval app (2015)',
     icon: <GaSvg width="37px" />,
     firstContent: displayTechStamps(retrievalAppTech),
-    firstImageUrl: './google-one-tap.png'
+    firstImageUrl: './retrieval.png'
   },
   {
     title: 'General Assembly - Web dev immersive',
-    createdAt: 'Group project - explor app',
+    createdAt: 'Group project - explor app (2015)',
     icon: <GaSvg width="37px" />,
     firstContent: displayTechStamps(explorAppTech),
-    firstImageUrl: './google-one-tap.png'
+    firstImageUrl: './explor.png'
   },
   {
     title: 'General Assembly - Web dev immersive',
-    createdAt: 'Earlier projects...',
+    createdAt: 'Earlier projects... (2015)',
     icon: <GaSvg width="37px" />,
     firstContent: displayTechStamps(earlierProjectsTech),
-    firstImageUrl: './google-one-tap.png',
-    secondImageUrl: './google-one-tap.png'
+    firstImageUrl: './jumanji.png',
+    secondImageUrl: './vegquiz.png'
   },
   {
     title: 'Jumanji Farm',
-    createdAt: 'Business owner - organic farming',
+    createdAt: 'Business owner - organic farming (2014-15)',
     icon: <JfSvg width="37px" />,
     collapsible: false
   },
   {
     title: 'Ogilvy Public Relations',
-    createdAt: 'Investor relations, account management',
+    createdAt: 'Investor relations, account management (2009-12)',
     icon: <OgilvySvg width="37px" />,
     collapsible: false
   }

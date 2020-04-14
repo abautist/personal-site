@@ -4,11 +4,13 @@ import Typical from 'react-typical'
 import {
   Box,
   Button,
+  Container,
   Flex,
   Text,
   Image,
   Link,
-  getPaletteColor
+  getPaletteColor,
+  mediaQueries
 } from 'pcln-design-system'
 import About from '../components/About'
 import WorkExperience from '../components/WorkExperience'
@@ -28,6 +30,9 @@ const StyledProfileImage = styled(Image)`
   height: 80px;
   border: 2px solid ${getPaletteColor('text.lightest')};
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.5);
+  ${mediaQueries[1]} {
+    height: 110px;
+  }
 `
 
 const StyledNavigationButton = styled(Button)`
@@ -43,9 +48,13 @@ const StyledNavigationButton = styled(Button)`
 `
 
 const StyledFooter = styled(Flex)`
-  position: absolute;
+  position: fixed;
   bottom: 0;
   background-color: ${getPaletteColor('text.lightest')};
+`
+
+const FullWidthContainer = styled(Container)`
+  width: 100%;
 `
 
 const StyledLink = styled(Link)`
@@ -109,49 +118,67 @@ const Home = () => {
         </StyledHeader>
       </header>
       <main>
-        <Flex flexDirection="column" m={3}>
-          <Flex alignItems="center" flexDirection="column">
-            <Box mb={2}>
-              <StyledProfileImage alt="profile-pic" src="/ab-profile.jpeg" />
-            </Box>
-            <Text fontWeight="bold" fontSize={3}>
-              Agustin Bautista
-            </Text>
-            <Text>Full Stack Developer</Text>
-          </Flex>
-          {displayNavigationButtons(
-            navigationContent,
-            isAboutPageDisplayed,
-            isWorkExperienceDisplayed
-          )}
-          {isAboutPageDisplayed && !isWorkExperienceDisplayed ? (
-            <About />
-          ) : isWorkExperienceDisplayed && !isAboutPageDisplayed ? (
-            <WorkExperience />
-          ) : (
+        <Container maxWidth={700}>
+          <Flex flexDirection="column" m={3}>
             <Flex
-              mt={4}
-              px={3}
-              justifyContent="center"
-              style={{ height: '90px', textAlign: 'center' }}
+              alignItems="center"
+              flexDirection="column"
+              pt={3}
+              pb="12px"
+              // pr={[null, null, 3]}
             >
-              <Typical
-                steps={[
-                  'The Internet and developer tools are more accessible than ever before.',
-                  500,
-                  "The Internet and developer tools are more accessible than ever before. It's truly an exciting time to be working in the tech industry 😊"
-                ]}
-                wrapper="div"
-              />
+              <Box mb={2}>
+                <StyledProfileImage alt="profile-pic" src="/ab-profile.jpeg" />
+              </Box>
+              <Text fontWeight="bold" fontSize={3}>
+                Agustin Bautista
+              </Text>
+              <Text>Full Stack Developer</Text>
             </Flex>
-          )}
-        </Flex>
+            <Flex
+              flexDirection={['column', null, 'row']}
+              justifyContent="center"
+              width={1}
+            >
+              {displayNavigationButtons(
+                navigationContent,
+                isAboutPageDisplayed,
+                isWorkExperienceDisplayed
+              )}
+            </Flex>
+            {isAboutPageDisplayed && !isWorkExperienceDisplayed ? (
+              <About />
+            ) : isWorkExperienceDisplayed && !isAboutPageDisplayed ? (
+              <WorkExperience />
+            ) : (
+              <Flex
+                mt={4}
+                px={3}
+                justifyContent="center"
+                style={{ height: '90px', textAlign: 'center' }}
+              >
+                <Typical
+                  steps={[
+                    'The Internet and developer tools are more accessible than ever before.',
+                    500,
+                    "The Internet and developer tools are more accessible than ever before. It's truly an exciting time to be working in the tech industry 😊"
+                  ]}
+                  wrapper="div"
+                />
+              </Flex>
+            )}
+          </Flex>
+        </Container>
       </main>
-      {/* <footer>
-        <StyledFooter width={1} p="12px" justifyContent="space-evenly">
-          {displayFooterLinks(footerLinkContent)}
+      <footer>
+        <StyledFooter width={1} p={2}>
+          <FullWidthContainer maxWidth={600}>
+            <Flex width={1} justifyContent="space-evenly">
+              {displayFooterLinks(footerLinkContent)}
+            </Flex>
+          </FullWidthContainer>
         </StyledFooter>
-      </footer> */}
+      </footer>
     </>
   )
 }
@@ -163,11 +190,13 @@ function displayNavigationButtons(
 ) {
   return array.map((button, index) => (
     <StyledNavigationButton
+      width={[null, null, 1 / 3]}
+      key={button.displayText}
       p={2}
+      mr={[null, null, 3]}
       mt={3}
       onClick={button.handleClick}
       justifyContent="center"
-      key={button.displayText}
       isHomeDisplayed={
         !isAboutPageDisplayed && !isWorkExperienceDisplayed && index === 0
       }
