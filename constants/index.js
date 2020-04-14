@@ -196,7 +196,7 @@ const workEvents = [
   },
   {
     title: 'Jumanji Farm',
-    createdAt: 'Business owner - organic farming (2014-15)',
+    createdAt: 'Business owner, organic farmer (2014-15)',
     icon: <JfSvg width="37px" />,
     collapsible: false
   },

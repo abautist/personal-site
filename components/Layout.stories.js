@@ -2,7 +2,7 @@ import React from 'react'
 import { withA11y } from '@storybook/addon-a11y'
 import { ThemeProvider } from 'pcln-design-system'
 import Layout from '../components/Layout'
-import Home from '.'
+import Home from '../pages'
 
 export default { title: 'Home', decorators: [withA11y] }
 
