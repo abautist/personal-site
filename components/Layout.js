@@ -1,17 +1,18 @@
 import Meta from './Meta'
+const imageUrl = '/ignasi_pattern_s.png'
 
 function Layout({ children }) {
   return (
     <>
       <Meta />
       {children}
-      {/* <style jsx global>{`
+      <style jsx global>{`
         body {
           margin: 0;
           padding: 0;
-          background-image: url(/public/ignasi_pattern_s.png);
+          background-image: url('${imageUrl}');
         }
-      `}</style> */}
+      `}</style>
     </>
   )
 }
