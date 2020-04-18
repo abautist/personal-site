@@ -43,7 +43,7 @@ const StyledNavigationButton = styled(Button)`
   }) =>
     isAboutPageDisplayed || isWorkExperienceDisplayed || isHomeDisplayed
       ? getPaletteColor('promoSecondary.dark')
-      : getPaletteColor('promoSecondary.light')};
+      : getPaletteColor('promoSecondary.base')};
   box-shadow: 7px 7px ${getPaletteColor('text.light')};
 `
 
@@ -59,7 +59,7 @@ const FullWidthContainer = styled(Container)`
 
 const StyledLink = styled(Link)`
   &:hover {
-    color: ${getPaletteColor('promoSecondary.light')};
+    color: ${getPaletteColor('promoSecondary.base')};
     text-decoration: none;
   }
 `
