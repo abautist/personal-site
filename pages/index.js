@@ -66,7 +66,7 @@ const StyledLink = styled(Link)`
 
 const footerLinkContent = [
   {
-    href: 'abautist703@gmail.com',
+    href: 'mailto:abautist703@gmail.com',
     text: 'Email'
   },
   {
